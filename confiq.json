@@ -1,0 +1,20 @@
+{
+  "params":
+  {
+    "local_server":"True",
+    "local_uri": "mysql://root:@localhost/mywebsite",
+    "fb_url":"https://www.facebook.com/",
+    "tw_url":"https://twitter.com",
+    "gh_url": "https://github.com",
+    "blog_name": "Gamer's World",
+    "tag_line": "",
+    "no_of_posts": 3,
+    "login_image":"login.svg",
+    "gmail-user": "aaqibwani613@gmail.com",
+    "gmail-password": "#######",
+    "username": "aaqib",
+    "password": "black123",
+    "secretkey": "wertyuiwucfbwukv"
+  }
+
+}

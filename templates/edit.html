@@ -1,0 +1,57 @@
+{% extends "layout.html" %}} {% block aaqib %}
+
+<!-- Page Header -->
+<header class="masthead" style="width:1263px; height:800px; background-image: url('{{url_for('static',filename ='img/login.jpg') }}')">
+
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Post details</h1>
+                    <span class="subheading">Have questions? I have answers.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <p>Fill the details of the post</p>
+            <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+            <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+            <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+            <form name="sentMessage" id="contactForm" novalidate action="/login/edit/{{post.sno}}" method="POST">
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Title</label>
+                        <input type="text" value="{{post.title}}" class="form-control" placeholder="Title" id="eTitle" name="eTitle" required data-validation-required-message="Please enter your Title." required>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>Subtitle</label>
+                        <input type="text" value="{{post.subtitle}}" class="form-control" placeholder="eSubtitle" name="eSubtitle" id="Subtitle" data-validation-required-message="Please enter your Subtitle." required>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        <label>content</label>
+                        <input type="text" value="{{post.content}}" class="form-control" placeholder="content" name="econtent" id="econtent" required data-validation-required-message="Please enter your content." required>
+                        <p class="help-block text-danger"></p>
+                    </div>
+                </div>
+                <br>
+                <div id="success"></div>
+                <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

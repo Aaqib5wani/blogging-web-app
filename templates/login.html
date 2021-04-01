@@ -1,0 +1,43 @@
+{% extends "layout.html" %}} {% block aaqib %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{url_for('static',filename ='img/login.jpg') }}')">
+
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Login</h1>
+                    <span class="subheading">Please Login below</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto" style="background-color: rgb(228, 238, 185);">
+            <p>Login</p>
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+                <fieldset>
+                    <div class="control-group">
+                        {{ form.email.label() }} {{ form.email(class="form-control") }}
+                    </div>
+                    <div class="control-group">
+                        {{ form.password.label() }} {{ form.password(class="form-control") }}
+                    </div>
+                    <br> {{ form.submit()}}
+
+                </fieldset>
+
+            </form>
+            <div><a href="{{url_for( 'register')}} "><small style="color: blue; ">Don't have an account ,please click here</small></a></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block aaqib %}
+
+
+
+
+<!-- Page Header -->
+<header class="masthead" style="width: 1263px; height: 800px; background-image: url('{{url_for('static',filename ='img/home.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1> {{value['blog_name']}}</h1>
+                    <span class="subheading">Heaven for Gamer's </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+
+            <div class="post-preview">
+                {% for post in post.items %}
+                <a href="post/{{post.sno}}">
+                    <h2 style="color: rgb(14, 5, 12);" class="post-title">
+                        {{post.title}}
+                    </h2>
+                    <h3 class="post-subtitle">
+                        {{post.content[0:100]}}...
+                    </h3>
+                </a>
+                <p class="post-meta">Posted by
+                    <a href="#">{{post.user.username}}</a> {{post.date[0:16]}}</p>
+                <hr> {% endfor %}
+            </div>
+            Page no >>> {% for page_num in post.iter_pages(left_edge=1,right_edge=1,left_current=2,right_current=3) %} {% if page_num %}
+            <a href="{{url_for('home',page=page_num)}}"><button style="padding: 2px 3px;" class="btn btn-primary">{{page_num}}</button></a> {% else %} ... {% endif %} {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
